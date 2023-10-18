@@ -1,0 +1,16 @@
+package com.ratelsoft.tutorials;
+public class ForLoop {
+
+	public static void main(String[] args) {
+
+		for (int i = 0; i <= 100; i++); {
+		(int j=0; j<i; i*=j)
+		};
+				System.out.print(i + " ");
+			
+				System.out.print("\n");
+	}
+	}
+
+
+

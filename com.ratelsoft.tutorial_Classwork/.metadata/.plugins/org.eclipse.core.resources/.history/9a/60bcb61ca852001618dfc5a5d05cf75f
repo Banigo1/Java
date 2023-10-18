@@ -1,0 +1,72 @@
+import java.awt.GridLayout;
+import java.awt.TextComponent;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class Science_calculator extends JFrame {
+	
+		public Science_calculator(){
+			
+		    super("Scientific Calculator");
+		    JPanel panel1 = new JPanel();
+		    panel1 = new JPanel(new GridLayout(4,4));
+          TextField  tf = new TextField(20);
+		    tf.setEditable(false);
+		    panel1.add(tf);
+
+		JButton button1 = new JButton("Rad/Deg");
+		JButton button2 = new JButton("x!");
+		JButton button3= new JButton("sqrt");
+		JButton button4 =new JButton("sin");
+		JButton button5 = new JButton("cos");
+		JButton button6 = new JButton("tan");
+		JButton button7 = new JButton("ln");
+		JButton button8=new JButton("log");
+		JButton button9=new  JButton("1/x");
+		JButton button10=new JButton("e^x");
+		JButton button11=new JButton("x^2");
+		JButton button12=new JButton("y^x");
+		JButton button13=new JButton("|x|");
+		JButton button14=new JButton("pi");
+		JButton button15=new JButton("e");
+        JButton button16=new JButton("C");
+		JButton button17=new JButton("(");
+		JButton button18=new JButton(")");
+		JButton button19=new JButton("%");
+		JButton button20=new JButton("/");
+		JButton button21=new JButton("7");
+		JButton button22=new JButton("8");
+		JButton button23=new JButton("9");
+		JButton button24=new JButton("*");
+		JButton button25=new JButton("4");
+		JButton button26=new JButton("5");
+		JButton button27=new JButton("6");
+		JButton button28=new JButton("-");
+		JButton button29=new JButton("1");
+		JButton button30=new JButton("2");
+		JButton button31=new JButton("3");
+		JButton button32=new JButton("+");
+		JButton button33=new JButton(".");
+		JButton button34=new JButton("0");
+		JButton button35=new JButton("+/-");
+		JButton button36=new JButton("=");
+		
+		
+		    
+
+
+		    panel1.add(button1);
+		    add(button2);
+		}
+
+			
+public static void main(String[] args){
+	Science_calculator s = new Science_calculator ();
+}
+}

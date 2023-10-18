@@ -1,0 +1,8 @@
+package com.ratelsoft.tutorials;
+
+public class Loops {
+	public static void main(String [] args){
+		
+	}  
+
+}

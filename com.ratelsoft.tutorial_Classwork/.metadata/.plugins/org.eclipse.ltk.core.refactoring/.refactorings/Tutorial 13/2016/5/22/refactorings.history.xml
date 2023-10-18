@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;src.com.ratelsoft.tutorial&apos; to &apos;com.ratelsoft.tutorial&apos;&#x0D;&#x0A;- Original project: &apos;Tutorial 13&apos;&#x0D;&#x0A;- Original element: &apos;Tutorial 13/src/src.com.ratelsoft.tutorial&apos;&#x0D;&#x0A;- Renamed element: &apos;Tutorial 13/src/com.ratelsoft.tutorial&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings&#x0D;&#x0A;- Rename subpackages of the package" description="Rename package &apos;src.com.ratelsoft.tutorial&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;src.com.ratelsoft.tutorial" name="com.ratelsoft.tutorial" patterns="*" qualified="true" references="true" stamp="1464302950799" textual="true" version="1.0"/>
+</session>

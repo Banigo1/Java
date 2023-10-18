@@ -1,0 +1,20 @@
+package com.ratelsoft.tutorials;
+
+import java.util.Scanner;
+
+public class GradeBookTest {
+
+	public static void main(String[] args) {
+		GradeBook G = new GradeBook();
+     Scanner input = new Scanner(System.in);
+
+		
+
+		System.out.println("Please enter the course name:");
+		String Banigo = input.nextLine();
+		
+		System.out.println();
+		G.displayMessage(Banigo);
+	}
+
+}

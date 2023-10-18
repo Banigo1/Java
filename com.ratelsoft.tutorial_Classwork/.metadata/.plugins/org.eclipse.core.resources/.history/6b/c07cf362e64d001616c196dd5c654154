@@ -1,0 +1,54 @@
+package com.ratelsoft.tutorial;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class FlowLayoutExample extends JFrame{
+	JFrame jFrame;
+
+	public FlowLayoutExample() {		
+		setTitle("FlowLayout Example");
+		setLayout(new FlowLayout(FlowLayout.CENTER));
+		setSize(200, 300);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		getContentPane().setBackground(Color.RED);
+		
+		for(int i = 0; i < 10; i++){
+			JLabel l = new JLabel("Label " + i + " ");
+			l.setForeground(Color.WHITE);
+			add(l);
+		}
+		
+
+		jFrame = new JFrame("FlowLayout Example");
+		jFrame.setSize(200, 300);
+		jFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		jFrame.setBackground(Color.BLUE);
+		
+		JButton jb = new JButton("Open New Frame");
+		jb.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				jFrame.setVisible(true);
+			}
+			
+		});
+		
+		
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new FlowLayoutExample();
+	}
+
+}

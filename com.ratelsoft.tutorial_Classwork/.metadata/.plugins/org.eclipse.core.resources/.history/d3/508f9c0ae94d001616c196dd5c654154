@@ -1,0 +1,26 @@
+package com.ratelsoft.tutorial;
+
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class GridLayoutExample extends JFrame{
+
+	public GridLayoutExample() {
+		setLayout(new GridLayout(3,3,5,5));
+		setSize(500, 550);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		for(int i = 0; i <= 12; i++){
+			add(new JButton(" " + i + " "));
+		}
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new GridLayoutExample();
+
+	}
+
+}

@@ -1,0 +1,172 @@
+package com.ratelsoft.tutorials;
+
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Container;
+
+public class SimpleCalc implements ActionListener{
+	
+	JFrame gui;
+	JPanel buttonPanel;
+	JTextField numberCalc;
+	int calcOperation = 0;
+	int currentCalc;
+ 
+	public static void main(String[] args){
+		EventQueue.invokeLater (new Runnable(){
+	@Override
+		public void run()
+		{
+			new SimpleCalc();
+		}
+		});
+	    }
+	
+	
+	
+	public SimpleCalc()
+	{
+		gui = new JFrame();
+		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gui.setTitle("Banigo Calculator");
+		gui.setSize(500,550);
+		gui.setLocationRelativeTo(null);
+		
+		
+        numberCalc = new JTextField();
+        numberCalc.setHorizontalAlignment(JTextField.RIGHT);
+        numberCalc.setEditable(true);
+        //numberCalc.setFocusable(false);
+        
+        
+        gui.add(numberCalc, BorderLayout.NORTH);
+        
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(5,3));
+        
+        gui.add(buttonPanel);
+        
+        
+        for (int i=1; i<10;i++)
+        {
+        addButton(buttonPanel,String.valueOf(i));
+        }
+        
+            JButton addition = new JButton("+");
+            addition.setActionCommand("+");
+        	OperatorAction subAction = new OperatorAction(1);
+        	addition.addActionListener(subAction);
+        	
+        	
+        	JButton subButton = new JButton("-");
+        	subButton.setActionCommand("-");
+        	OperatorAction addAction = new OperatorAction(2);
+        	subButton.addActionListener(addAction);
+        	
+        	JButton D = new JButton("/");
+        	D.setActionCommand("/");
+        	OperatorAction DIV = new OperatorAction(3);
+        	D.addActionListener(DIV);
+        	
+        	JButton D1 = new JButton("*");
+        	D1.setActionCommand("*");
+        	OperatorAction DIV1 = new OperatorAction(4);
+        	D1.addActionListener(DIV1);
+        	
+        	JButton D11 = new JButton("Banigo");
+        	D11.setActionCommand("*");
+        	OperatorAction DIV11 = new OperatorAction(5);
+        	D11.addActionListener(DIV11);
+        	
+        	
+        	 JButton equalsButton = new JButton("=");
+        	 equalsButton.addActionListener(new ActionListener(){
+        		 
+       
+        		 @Override
+        		 public void actionPerformed(ActionEvent event)
+        		 {
+        			 if (!numberCalc.getText().isEmpty())
+        			 {
+        				 int number = Integer.parseInt(numberCalc.getText());
+        				 
+        				 
+        			 if (calcOperation == 1)
+        				 {
+        				 
+        			int calculate = currentCalc + number;
+        					numberCalc.setText(Integer.toString(calculate));
+        				 }
+        			 
+        			 
+        			else if (calcOperation == 2)
+        				 {
+        			int calculate = currentCalc - number;
+        					 numberCalc.setText(Integer.toString(calculate));
+        				 }	
+        			 
+        			 
+        					 else if (calcOperation == 3)
+            				 {
+            			int calculate = currentCalc / number;
+            					 numberCalc.setText(Integer.toString(calculate));
+            				 }
+        			 
+        			 
+            					 else if (calcOperation == 4)
+                				 {
+                			int calculate = currentCalc * number;
+                					 numberCalc.setText(Integer.toString(calculate));
+        		     }
+        			 }
+        			 }
+        		     });
+        	 
+        	 
+        	 buttonPanel.add(addition);
+        	 buttonPanel.add(subButton);
+        	 buttonPanel.add(D);
+        	 buttonPanel.add(D1);
+        	 buttonPanel.add(equalsButton);
+        	 buttonPanel.add(D11);
+        	 
+        	 gui.setVisible(true);
+    }
+	
+	private void addButton(Container parent,String name){
+	JButton but = new JButton(name);
+	but.setActionCommand(name);
+	but.addActionListener(this);
+	parent.add(but);
+	}
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent evt){
+		String action = evt.getActionCommand();
+		numberCalc.setText(action);
+	}
+	
+	
+	private class OperatorAction implements ActionListener{
+		
+		private int Operator;
+		
+		public OperatorAction(int operation){
+		Operator = operation;
+	}
+		
+		
+    public void actionPerformed(ActionEvent evt){
+	currentCalc = Integer.parseInt(numberCalc.getText());
+    calcOperation = Operator;
+	}
+	}
+    }

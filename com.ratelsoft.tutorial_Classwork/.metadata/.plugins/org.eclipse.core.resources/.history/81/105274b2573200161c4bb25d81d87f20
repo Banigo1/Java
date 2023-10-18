@@ -1,0 +1,28 @@
+package com.ratelsoft.tutorials;
+import java.util.Scanner;
+
+public class ForLoop {
+
+	public static void main(String[] args) {
+
+		int q = 2;
+		for (int j = 1; j <= 12; j++) {
+			System.out.printf("%2d  x  %2d = %3d \n", q, j, (q * j));
+		
+
+		System.out.println("\n\n=============================================================================\n");
+		Scanner myinput = new Scanner (System.in);
+	System.out.print("enter number 1 :");
+	int number1 = myinput.nextInt();
+	System.out.print("enter number 2 :");
+	int number2 = myinput.nextInt();
+		for (int r = 1; j<=number1; j++) {
+			for (int i = 2; i< number2; i++){
+				System.out.printf("%2d  x  %2d = %3d    ", i, j, (i*j));
+					}
+				System.out.println();
+			}
+
+		}
+	}
+}

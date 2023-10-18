@@ -1,0 +1,71 @@
+
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.*;
+	
+	public class Calcu {
+		
+	     
+		  	public static void main(String[] args){
+				//EventQueue.invokeLater (new Runnable(){
+			//@Override
+				//public void run()
+				{
+					new CalculatorPanel();
+				}
+			//	});
+			    }
+		  	
+	public void init() {
+	      CalculatorPanel calc = new CalculatorPanel();
+	      getContentPane().add(calc);
+	      }
+
+	private Container getContentPane() {
+		return null;
+	}
+	   }
+
+	   class CalculatorPanel extends JPanel implements ActionListener {
+	      JButton n1,n2,n3,n4,n5,n6,n7,n8,n9,n0,plus,minus,mul,div,dot,equal;
+	      static JTextField result = new JTextField(15);
+	      static String lastCommand = null; 
+	      JOptionPane p = new JOptionPane();
+	      double preRes = 0,secVal = 0,res;
+	 
+
+	      public void actionPerformed(ActionEvent ae)
+	         {
+	      if(ae.getSource() != null);
+	    	  if(ae.getSource()==equal)
+	             {
+	             secVal=Double.parseDouble(result.getText());
+	             if(lastCommand.equals("/"))
+	                  res=preRes/secVal;
+	             else if(lastCommand.equals("*"))
+	                  res=preRes*secVal;
+	             else if(lastCommand.equals("-"))
+	                  res=preRes-secVal;
+	             else if(lastCommand.equals("+"))
+	                  res=preRes+secVal;
+	             result.setText(" "+res);
+	             lastCommand="=";
+	             }
+	      else if(ae.getSource()==mul)
+	             {
+	              preRes=Double.parseDouble(result.getText());
+	              lastCommand="*";
+	              result.setText("0");
+	              }
+	      else if(ae.getSource()==plus)
+	              {
+	              preRes=Double.parseDouble(result.getText());
+	              lastCommand="+";
+	              result.setText("0");
+	              }
+
+	       }
+	 
+
+	}

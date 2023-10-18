@@ -1,0 +1,35 @@
+package com.ratelsoft.tutorial;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class FlowLayoutExample extends JFrame{
+	JFrame jFrame;
+
+	public FlowLayoutExample() {
+		jFrame = new JFrame("FlowLayout Example");
+		setTitle("FlowLayout Example");
+		setLayout(new FlowLayout(FlowLayout.CENTER));
+		setSize(200, 300);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		getContentPane().setBackground(Color.RED);
+		
+		for(int i = 0; i < 10; i++){
+			JLabel l = new JLabel("Label " + i + " ");
+			l.setForeground(Color.WHITE);
+			add(l);
+		}
+		
+		
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new FlowLayoutExample();
+	}
+
+}

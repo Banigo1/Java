@@ -1,0 +1,35 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+
+public class Calculator {
+	private JFrame frame;
+	private JTextField txtDisplay;
+	
+	double firstnum;
+	double secondnum;
+	double result;
+	String operation;
+	String answer;
+	
+	public static void main(String args []){
+	EventQueue.invokeLater(new Runnable(){
+
+		@Override
+		public void run() {
+			try{
+				Calculator window = new Calculator();
+				window.frame.setVisible(true);
+				
+		}
+			catch (Exception e){
+				e.printStackTrace();
+			}
+		}
+		
+	});
+
+}
+}

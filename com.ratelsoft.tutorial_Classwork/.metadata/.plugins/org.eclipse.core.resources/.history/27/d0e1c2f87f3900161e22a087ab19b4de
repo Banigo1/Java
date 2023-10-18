@@ -1,0 +1,44 @@
+package com.ratelsoft.cgpa;
+
+import java.util.Scanner;
+
+public class Number {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner (System.in);
+		
+		System.out.print("Enter the number of course:");
+		int num = input.nextInt();
+		
+		String grade [] = new String [num];
+		int creditUnit[]  = new int [num];
+		double creditValue [] = new double [num];
+		
+		int totCredit = 0;
+		double totGPA = 0;
+		
+		for (int i = 0; i<=5; i++)
+				{
+			System.out.print("Grade:");
+			grade [i] = input.next();
+			
+			System.out.print("CreditUnit:");
+			creditUnit[i] = input.nextInt();
+			
+			
+			switch (grade [i])
+			{
+			case "A": creditValue[i]=5.00;break;
+			case "B":
+			case "C":
+			case "D":
+			case "E":
+			case "F":
+				
+		
+				
+		
+
+	}
+				}
+	}

@@ -1,0 +1,39 @@
+package com.ratelsoft.tutorial;
+
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+public class Label {
+
+	public static void main(String[] args) {
+		
+	
+	JFrame f = new JFrame();
+	JFrame.setDefaultLookAndFeelDecorated(true);
+	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	f.setTitle("JTextfield Test");
+	f.setLayout(new GridLayout(3,3));
+	
+	JLabel L = new JLabel (" User Name ", SwingConstants.RIGHT);
+	JLabel L2 = new JLabel("Password ", SwingConstants.RIGHT);
+	
+	JTextField userNameField = new JTextField();
+	JPasswordField P = new JPasswordField();
+	
+		f.add(L);
+		f.add(userNameField);
+		f.add(L2);
+		f.add(P);
+		f.setSize(150,100);
+		f.setVisible(true);
+    
+	}
+	}
+
+

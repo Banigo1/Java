@@ -1,0 +1,16 @@
+package com.ratelsoft.tutorial;
+
+import javax.swing.JFrame;
+
+public class GridLayoutExample extends JFrame{
+
+	public GridLayoutExample() {
+		
+	}
+
+	public static void main(String[] args) {
+		new GridLayoutExample();
+
+	}
+
+}

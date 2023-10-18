@@ -1,0 +1,88 @@
+package calculator;
+
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.*;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
+import java.lang.Math.*;
+
+class Calc extends JFrame implements ActionListener{
+	
+	
+	public static void main(String [] args){
+	String str_number = "";
+	String buff [];
+	String entries[];
+	int operation =0;
+	char operator ='\0';
+	double num1, num2;
+	double result;
+	
+	JButton b1 = new JButton("1");
+	JButton b2 = new JButton("2");
+	JButton b3 = new JButton("3");
+	JButton b4 = new JButton("4");
+	JButton b5 = new JButton("5");
+	JButton b6 = new JButton("6");
+	JButton b7 = new JButton("7");
+	JButton b8 = new JButton("8");
+	JButton b9 = new JButton("9");
+	JButton b0 = new JButton("0");
+	JButton add = new JButton("+");
+	JButton sub = new JButton("-");
+	JButton mul= new JButton("*");
+	JButton div= new JButton("/");
+	JButton equ = new JButton("=");
+	JButton clr= new JButton("CLR");
+	JButton dec = new JButton(".");
+	JButton sini = new JButton("sin");
+	JButton cosi = new JButton("cos");
+	JButton tani = new JButton("tan");
+	JButton lni = new JButton("ln");
+	JButton logi= new JButton("log");
+	JButton pii = new JButton("pi");
+	JButton cbt = new JButton("cbrt");
+	JButton sqt = new JButton("sqtr");
+	JButton xsq = new JButton("x^2");
+	JButton yt = new JButton("History");
+	JButton mc = new JButton("MC");
+	JButton mr = new JButton("MR");
+	JButton mp = new JButton("M+");
+	
+	JFrame f = new JFrame("Banigo Calculator");
+	//JList list = new JList(entries);
+	JScrollPane scrollpane;
+	
+	JPanel NumberPanel = new JPanel();
+	JPanel ResultPanel = new JPanel();
+	JPanel MemoryPanel = new JPanel();
+	
+	JTextField text = new JTextField(15);
+	JTextField memt = new JTextField(15);
+
+		f.setLayout(new BorderLayout ());
+		NumberPanel.setLayout(new GridLayout());
+		ResultPanel.setLayout(new FlowLayout());
+		
+		f.setVisible(true);
+		f.setSize(400,400);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+}	
+		
+	
+	

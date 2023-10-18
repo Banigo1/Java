@@ -1,0 +1,38 @@
+package com.ratelsoft.tutorial;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class GUI_Practice {
+	
+	public  static void main (String[] args){
+		
+		JFrame f = new JFrame("GUI Practise");
+		f.setVisible(true);
+		f.setSize(900,900);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		JPanel  p = new JPanel(new GridBagLayout());
+		
+		 f.add(p,BorderLayout.CENTER);
+		 
+		 JButton b1 = new JButton ("BUTTON 1");
+		 JButton b2 = new JButton ("BUTTON 2");
+		 
+		 GridBagConstraints c = new GridBagConstraints();
+		
+		
+			
+		c.insets = new Insets (20,1,20,20);
+		c.gridx = 0;
+	    c.gridy = 1;
+	    p.add(b1,c);
+	    
+	    c.gridx = 0;
+	    c.gridy = 2;
+		p.add(b2, c);
+		
+		
+	}
+}

@@ -1,0 +1,14 @@
+package com.ratelsoft.tutorial;
+
+public class FlowLayout {
+
+	public FlowLayout() {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new FlowLayout();
+	}
+
+}

@@ -1,0 +1,72 @@
+package com.Login.page;
+
+//In this Frame, I set username as "test", and password as "12345" 
+//I saved this project with the name "com.Login.page".
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Log extends JFrame {
+public static void main(String[] args) {
+	
+Log frameTable = new Log();
+}
+
+JButton login = new JButton("Login");
+JPanel panel = new JPanel();
+JTextField txtfield = new JTextField("14");
+JPasswordField pass = new JPasswordField(15);
+JLabel l1 = new JLabel("User name");
+JLabel l2 = new JLabel("Password");
+
+Log(){
+super("Login Autentification");
+setSize(300,200);
+setLocation(500,280);
+panel.setLayout (null);
+
+
+l2.setBounds(5,70,300,20);
+txtfield.setBounds(70,30,150,20);
+l1.setBounds(5,30,150,20);
+pass.setBounds(70,70,150,20);
+login.setBounds(110,100,80,20);
+
+panel.add(login);
+panel.add(l1);
+panel.add(l2);
+panel.add(txtfield);
+panel.add(pass);
+
+getContentPane().add(panel);
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setVisible(true);
+actionlogin();
+}
+
+public void actionlogin(){
+login.addActionListener(new ActionListener() {
+	
+public void actionPerformed(ActionEvent ae) {
+String puname = txtfield.getText();
+String ppaswd = pass.getText();
+
+if(puname.equals("test") && ppaswd.equals("12345")) {
+	
+newframe regFace = new newframe();
+regFace.setVisible(true);
+dispose();
+} 
+else {
+
+JOptionPane.showMessageDialog(null,"Wrong Password / Username");
+txtfield.setText("");
+pass.setText("");
+txtfield.requestFocus();
+}
+}
+});
+}
+}
+
+

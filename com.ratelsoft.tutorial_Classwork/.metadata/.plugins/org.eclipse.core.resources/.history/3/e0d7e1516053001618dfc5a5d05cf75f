@@ -1,0 +1,105 @@
+
+
+	import javax.swing.*;
+
+	import java.awt.*;
+	import java.awt.event.*;
+	
+	public class Calcu {
+	
+	   public void init() {
+	      CalculatorPanel calc=new CalculatorPanel();
+	      getContentPane().add(calc);
+	      }
+
+	private Container getContentPane() {
+		return null;
+	}
+	   }
+
+	   class CalculatorPanel extends JPanel implements ActionListener {
+	      JButton n1,n2,n3,n4,n5,n6,n7,n8,n9,n0,plus,minus,mul,div,dot,equal;
+	      static JTextField result = new JTextField(15);
+	      static String lastCommand=null; 
+	      JOptionPane p=new JOptionPane();
+	      double preRes=0,secVal=0,res;
+
+	      private void assign(String no)
+	        {
+	         if((result.getText()).equals("0"))
+	            result.setText(no);
+	          else if(lastCommand=="=")
+	           {
+	            result.setText(no);
+	            lastCommand=null;
+	 
+	      JButton mul=new JButton("*");
+	      JPanel panel = new JPanel();
+	         panel.add(mul);
+	         mul.addActionListener(this);
+
+	         n1=new JButton("1");
+	         panel.add(n1);
+	         n1.addActionListener(this);
+	         n2=new JButton("2");
+	         panel.add(n2);
+	         n2.addActionListener(this);
+	         n3=new JButton("3");
+	         panel.add(n3);
+	         n3.addActionListener(this);
+	         minus=new JButton("-");
+	         panel.add(minus);
+	         minus.addActionListener(this);
+
+	         dot=new JButton(".");
+	         panel.add(dot);
+	         dot.addActionListener(this);
+	         n0=new JButton("0");
+	         panel.add(n0);
+	         n0.addActionListener(this);
+	         equal=new JButton("=");
+	         panel.add(equal);
+	         equal.addActionListener(this);
+	         plus=new JButton("+");
+	         panel.add(plus);
+	         plus.addActionListener(this);
+	         add(panel,BorderLayout.CENTER);
+	      }}
+	      public void actionPerformed(ActionEvent ae)
+	         {
+	      if(ae.getSource() != null);
+	    	  if(ae.getSource()==equal)
+	             {
+	             secVal=Double.parseDouble(result.getText());
+	             if(lastCommand.equals("/"))
+	                  res=preRes/secVal;
+	             else if(lastCommand.equals("*"))
+	                  res=preRes*secVal;
+	             else if(lastCommand.equals("-"))
+	                  res=preRes-secVal;
+	             else if(lastCommand.equals("+"))
+	                  res=preRes+secVal;
+	             result.setText(" "+res);
+	             lastCommand="=";
+	             }
+	      else if(ae.getSource()==mul)
+	             {
+	              preRes=Double.parseDouble(result.getText());
+	              lastCommand="*";
+	              result.setText("0");
+	              }
+	      else if(ae.getSource()==plus)
+	              {
+	              preRes=Double.parseDouble(result.getText());
+	              lastCommand="+";
+	              result.setText("0");
+	              }
+
+	       }
+	 
+public static void main(String[] args) {
+		new Calcu();
+
+	}
+
+}

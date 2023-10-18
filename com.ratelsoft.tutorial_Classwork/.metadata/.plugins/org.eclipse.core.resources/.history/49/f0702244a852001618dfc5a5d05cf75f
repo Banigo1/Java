@@ -1,0 +1,191 @@
+import java.awt.*;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.TextComponent;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+
+class Calc extends JFrame implements ActionListener{
+   String str_number="";
+   String buff[];
+   String entries[];
+   int operation=0;
+   char operator='\0';
+   double num1, num2;
+   double result;
+ 
+
+    JButton b1 = new JButton("1");
+    JButton b2 = new JButton("2");
+    JButton b3 = new JButton("3");
+    JButton b4 = new JButton("4");
+    JButton b5 = new JButton("5");
+    JButton b6 = new JButton("6");
+    JButton b7 = new JButton("7");
+    JButton b8 = new JButton("8");
+    JButton b9 = new JButton("9");
+    JButton b0 = new JButton("0");
+    JButton add = new JButton("+");
+    JButton sub = new JButton("-");
+    JButton mul= new JButton("*");
+    JButton div= new JButton("/");
+    JButton equ= new JButton("=");
+    JButton clr= new JButton("CLR");
+    JButton dec= new JButton(".");
+    JButton sini= new JButton("sin");
+    JButton cosi= new JButton("cos");
+    JButton tani= new JButton("tan");
+    JButton lni= new JButton("ln");
+    JButton logi= new JButton("log");
+    JButton pii= new JButton("pi");
+    JButton cbt= new JButton("cbrt");
+    JButton sqt= new JButton("sqrt");
+    JButton xsq= new JButton("X^2");
+    JButton mc= new JButton("MC");
+    JButton mr = new JButton("MR");
+    JButton mp = new JButton("M+");
+    
+    JFrame f = new JFrame("Java Calculator");
+    JPanel NumberPanel = new JPanel();
+    JPanel ResultPanel = new JPanel();
+    JPanel MemoryPanel = new JPanel();
+    
+    JTextField text = new JTextField(15);
+    JTextField memt = new JTextField(15);
+    
+    
+    public Calc()
+    {
+    	
+    f.setLayout(new BorderLayout());
+    NumberPanel.setLayout(new GridLayout(7,5));
+    ResultPanel.setLayout(new FlowLayout());
+    f.setVisible(true);
+    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    NumberPanel.add(b1);
+    b1.addActionListener(this);
+    
+    NumberPanel.add(b2);
+    b2.addActionListener(this);
+    
+    NumberPanel.add(b3);
+    b3.addActionListener(this);
+    
+    NumberPanel.add(b4);
+    b4.addActionListener(this);
+    
+    NumberPanel.add(b5);
+    b5.addActionListener(this);
+    
+    NumberPanel.add(b6);
+    b6.addActionListener(this);
+    
+    NumberPanel.add(b7);
+    b7.addActionListener(this);
+    
+    NumberPanel.add(b8);
+    b8.addActionListener(this);
+    
+    NumberPanel.add(b9);
+    b9.addActionListener(this);
+    
+    NumberPanel.add(b0);
+    b0.addActionListener(this);
+    
+    NumberPanel.add(add);
+    add.addActionListener(this);
+    
+    NumberPanel.add(sub);
+    sub.addActionListener(this);
+    
+    NumberPanel.add(mul);
+    mul.addActionListener(this);
+    
+    NumberPanel.add(div);
+    div.addActionListener(this);
+    
+    NumberPanel.add(dec);
+    dec.addActionListener(this);
+    
+    NumberPanel.add(clr);
+    b1.addActionListener(this);
+    
+    NumberPanel.add(sini);
+    sini.addActionListener(this);
+    
+    NumberPanel.add(cosi);
+    cosi.addActionListener(this);
+    
+    NumberPanel.add(tani);
+    b1.addActionListener(this);
+    
+    NumberPanel.add(logi);
+    logi.addActionListener(this);
+    
+    NumberPanel.add(lni);
+    pii.addActionListener(this);
+    
+    NumberPanel.add(cbt);
+    sqt.addActionListener(this);
+    
+    NumberPanel.add(sqt);
+    sqt.addActionListener(this);
+    
+    NumberPanel.add(xsq);
+    xsq.addActionListener(this);
+    
+    
+    mc.addActionListener(this);
+    NumberPanel.add(mc);
+    
+    mr.addActionListener(this);
+    NumberPanel.add(mr);
+    
+    mp.addActionListener(this);
+    NumberPanel.add(mp);
+    
+    text.setFocusable(true);
+    text.addKeyListener(new KeyAdapter(){
+    	
+    	  public void KeyTyped(KeyEvent e) {
+    	        char c = e.getKeyChar();
+
+    	        
+    	        if(c==(KeyEvent.VK_ENTER))
+    	        		{
+    	        	equalto();
+    	        }
+    	        else if(c==(KeyEvent.VK_BACK_SPACE))
+    	        		{
+    	        	str_number="";
+    	        	text.setText("");
+    	        }
+    	        else
+    	        {
+    	        	str_number+=c;
+    	        }
+    	  }
+    });
+    
+      ResultPanel.add(text);
+      ResultPanel.add(equ);
+      MemoryPanel.add(memt);
+      equ.addActionListener(this);
+      
+      
+      f.add(NumberPanel, BorderLayout.CENTER);
+      f.add(ResultPanel, BorderLayout.NORTH);
+      f.add(MemoryPanel, BorderLayout.SOUTH);
+      
+      
+        	

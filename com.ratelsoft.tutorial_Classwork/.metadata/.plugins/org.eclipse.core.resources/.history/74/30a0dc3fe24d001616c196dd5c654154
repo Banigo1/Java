@@ -1,0 +1,22 @@
+package com.ratelsoft.tutorial;
+
+import java.awt.LayoutManager;
+
+import javax.swing.JFrame;
+
+public class FlowLayout extends JFrame{
+
+	public FlowLayout() {
+		getContentPane().setLayout((LayoutManager) new FlowLayout());
+		setSize(200, 300);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new FlowLayout();
+	}
+
+}

@@ -1,0 +1,8 @@
+import javax.swing.joptionpane;
+
+public class Dialog1 {
+	public static void main (String[] arg){
+	
+	jOptionPane.showMessageDialogue( null, "Welcome\nto\nJava" );
+}
+}

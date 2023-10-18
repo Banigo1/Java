@@ -1,0 +1,75 @@
+package com.ratelsoft.cgpa;
+
+import java.util.Scanner;
+public class Number {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner (System.in);
+		String[] grade_array = {"A", "B", "C", "D", "E"};
+		for(String a:grade_array ){
+			System.out.println(a);
+		}
+		System.out.println("\nORDINARY SYSTEM OUT\n======================\n");
+		System.out.println(grade_array[0]);
+		System.out.println(grade_array[1]);
+		System.out.println(grade_array[2]);
+		System.out.println(grade_array[3]);
+		System.out.println(grade_array[4]);
+		
+
+		System.out.println("\nWHILE LOOP\n======================\n");
+		int count = 0;
+		while(count != grade_array.length){
+			System.out.println(grade_array[count]);
+			count++;
+		}
+		
+		
+		System.out.print("Enter the number of course:");
+		int num = input.nextInt();
+		String[] grade = new String [num];
+		int creditUnit[]  = new int [num];
+		double creditValue [] = new double [num];
+		
+		int totCredit = 0;
+		double totGPA = 0;
+		
+		int i = 0;
+		
+			System.out.print("Grade:");
+			
+			
+			
+			grade [i] = input.next();
+			
+			System.out.print("CreditUnit:");
+			creditUnit[i] = input.nextInt();
+			
+			
+			switch (grade [i])
+			{
+			case "A": creditValue[i]=5.00;break;
+			case "B": creditValue[i]=4.00;break;
+			case "C": creditValue[i]=3.00;break;
+			case "D": creditValue[i]=2.00;break;
+			case "F": creditValue[i]=0.00;break;
+			
+			
+			default: System.out.println("ERROR");
+				
+}
+			totGPA = totGPA+(creditValue[i]*creditUnit[i]);
+			totCredit+= creditUnit[i]; 
+	
+		
+		double CGPA = totGPA / totCredit;
+		
+		System.out.printf("GPA: %2f", totGPA);
+	    System.out.println();
+		System.out.printf("Total Credit %d", totCredit);
+		System.out.println("                   ");
+		System.out.printf("CGPA: %f", CGPA);
+		
+		
+}
+}

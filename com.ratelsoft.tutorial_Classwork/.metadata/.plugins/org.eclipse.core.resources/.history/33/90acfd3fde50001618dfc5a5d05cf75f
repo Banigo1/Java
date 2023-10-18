@@ -1,0 +1,48 @@
+package com.ratelsoft.tutorial;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+import java.awt.BorderLayout;
+import java.awt.Font;
+
+public class BorLayout {
+	
+        JFrame f = new JFrame("BorLayout");
+		JButton b = new JButton("NORTH");
+		JButton b1 = new JButton("SOUTH");
+		JButton b2 = new JButton("BANIGO");
+		JButton b3 = new JButton("BOB");
+		JButton b4 = new JButton("DOKUBO");
+		
+      public BorLayout() {
+			   
+			f.setLayout(new BorderLayout());
+			f.add(b, BorderLayout.NORTH);
+			f.add(b1, BorderLayout.SOUTH);
+			f.add(b2, BorderLayout.CENTER);
+			f.add(b3, BorderLayout.WEST);
+			f.add(b4, BorderLayout.EAST);
+			
+			b.setFont(new Font ("Courier", Font.ITALIC,100));
+			
+			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			f.setSize(500,500);
+			f.setVisible(true);
+		   }
+
+			
+			public static void main(String[] arg){
+			//	SwingUtilities.invokeLater(new Runnable(){
+					//@ Override
+					//public void run(){
+						new BorLayout();
+					}
+				//});
+			//}
+	
+}
+
+
+			

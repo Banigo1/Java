@@ -1,0 +1,69 @@
+package com.Login.page;
+
+//In this Frame, I make username as a "test" and password "12345"
+//You can increase your creativity with this source. And you can add a new Label or Button to make a best program. 
+//I'll give you a source code. You must save this code with name "Log.java".
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Log extends JFrame {
+
+public static void main(String[] args) {
+}
+
+JButton login = new JButton("Login");
+JPanel panel = new JPanel();
+JTextField txtfield = new JTextField(15);
+JPasswordField pass = new JPasswordField(15);
+
+Log(){
+super("Login Autentification");
+setSize(300,200);
+setLocation(500,280);
+panel.setLayout (null);
+
+
+
+txtfield.setBounds(70,30,150,20);
+pass.setBounds(70,65,150,20);
+login.setBounds(110,100,80,20);
+
+panel.add(login);
+panel.add(txtfield);
+panel.add(pass);
+
+getContentPane().add(panel);
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setVisible(true);
+actionlogin();
+}
+
+public void actionlogin(){
+login.addActionListener(new ActionListener() {
+	
+public void actionPerformed(ActionEvent ae) {
+String puname = txtfield.getText();
+String ppaswd = pass.getText();
+
+if(puname.equals("test") && ppaswd.equals("12345")) {
+	
+newframe regFace =new newframe();
+regFace.setVisible(true);
+dispose();
+} 
+else {
+
+JOptionPane.showMessageDialog(null,"Wrong Password / Username");
+txtfield.setText("");
+pass.setText("");
+txtfield.requestFocus();
+}
+}
+});
+}
+}
+
+//and you must save this source below with name "newframe.java"
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Class_work.java&apos; to &apos;Layout Managers.tutorial&apos;&#x0D;&#x0A;- Original project: &apos;com.ratelsoft.tutorial_Classwork&apos;&#x0D;&#x0A;- Destination element: &apos;Layout Managers.tutorial&apos;&#x0D;&#x0A;- Original element: &apos;com.ratelsoft.tutorial_001.Class_work.java&apos;" description="Copy compilation unit" destination="=Layout Managers.tutorial" element1="/src&lt;com.ratelsoft.tutorial_001{Class_work.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1469073479368" units="1" version="1.0"/>
+</session>

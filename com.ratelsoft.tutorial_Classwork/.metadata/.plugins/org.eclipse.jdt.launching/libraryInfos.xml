@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\Ratelsoft\RatelsoftServer" version="1.7.0_09">
+<bootpath>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\resources.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\rt.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\jsse.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\jce.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\charsets.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\jfr.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files\Java\jre1.8.0_73" version="1.8.0_73">
+<bootpath>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\resources.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\rt.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\jsse.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\jce.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\charsets.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\jfr.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_73\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\Java\jre1.8.0_73\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Ratelsoft\RatelsoftServer\jre" version="1.7.0_09">
+<bootpath>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\resources.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\rt.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\jsse.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\jce.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\charsets.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\jfr.jar"/>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Ratelsoft\RatelsoftServer\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

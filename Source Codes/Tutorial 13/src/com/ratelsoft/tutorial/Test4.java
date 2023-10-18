@@ -1,0 +1,159 @@
+package com.ratelsoft.tutorial;
+
+import java.awt.BorderLayout;
+import java.io.File;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.swing.BorderFactory;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
+import javax.swing.UIManager;
+
+public class Test4 {
+	private static MyFrame f;
+	public static void main(String[] args) throws Exception{
+		try{
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		}
+		catch(Exception e){
+		}
+		f = new MyFrame();
+		
+		final JProgressBar bar = new JProgressBar();
+		bar.setStringPainted(true);
+		bar.setString("Calculating");
+		bar.setIndeterminate(true);
+		
+		JPanel panel = new JPanel(new BorderLayout(5, 5));
+		panel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+		panel.add(bar, BorderLayout.NORTH);
+		
+		final JTextArea textArea = new JTextArea();
+		textArea.setEditable(false);
+		panel.add(new JScrollPane(textArea), BorderLayout.CENTER);
+		
+		f.setContentPane(panel);
+		
+		SwingUtilities.invokeLater(new Runnable(){
+			public void run(){
+				f.setVisible(true);
+			}
+		});
+		
+		SwingUtilities.invokeLater(new Runnable(){
+			public void run(){
+				new MyWorker(bar, textArea).execute();
+			}
+		});
+	}
+	
+	private static class MyWorker extends SwingWorker<Boolean, ValuePair<Type, String>>{
+		private JProgressBar progress;
+		private JTextArea textArea;
+		private String path = "E:\\MySchool 13-2-2015\\";
+		private int total;
+		private int done;
+		private LinkedList<File> files;
+		
+		public MyWorker(JProgressBar progress, JTextArea area) {
+			this.progress = progress;
+			textArea = area;
+			files = new LinkedList<File>();
+		}
+
+		@Override
+		protected Boolean doInBackground() throws Exception {
+			addFile(new File(path));
+			total = files.size();
+			
+			publish(new ValuePair<Type, String>(Type.MAXIMUM, total + ""));
+			
+			Thread.sleep(100);
+			
+			for( File f : files ){
+				f.delete();
+				done++;
+				publish(new ValuePair<Type, String>(Type.STRING, f.getAbsolutePath()));
+				publish(new ValuePair<Type, String>(Type.PROGRESS, done + ""));
+			}
+			
+			return true;
+		}
+		
+		private void addFile(File f){
+			if( f.isDirectory() ){
+				File[] allFiles = f.listFiles();
+				for( File file : allFiles )
+					addFile(file);
+			}
+			files.add(f);
+		}
+		
+		@Override
+		protected void process(List<ValuePair<Type, String>> chunks) {
+			for( ValuePair<Type, String> pair : chunks ){
+				if( pair.getKey() == Type.STRING )
+					textArea.append("Deleted: " + pair.getValue() + "\n");
+				else if( pair.getKey() == Type.MAXIMUM ){
+					progress.setIndeterminate(false);
+					progress.setMaximum(total);
+					progress.setValue(0);
+					f.setVisible(f.getTitle() + " - " + total + " Files found!");
+				}
+				else{
+					progress.setValue(Integer.parseInt(pair.getValue()));
+					if( (Integer.parseInt(pair.getValue()) * 100 / total) == 50 ){
+						progress.setString("Half way there...");
+					}
+					else
+						progress.setString( (Integer.parseInt(pair.getValue()) * 100 / total) + "%" );
+				}
+			}
+		}
+		
+		@Override
+		protected void done() {
+			try{
+				boolean status = get();
+				if( status ){
+					progress.setValue(total);
+					progress.setString("Completed!");
+				}
+				else{
+					progress.setString("Process terminated!!!");
+				}
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
+	private static class ValuePair<E, T>{
+		private E key;
+		private T value;
+		
+		public ValuePair(E k, T v){
+			key = k;
+			value = v;
+		}
+		
+		public E getKey(){
+			return key;
+		}
+		
+		public T getValue(){
+			return value;
+		}
+	}
+	
+	private enum Type{
+		STRING, PROGRESS, MAXIMUM;
+	}
+}
